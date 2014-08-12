@@ -8,7 +8,7 @@
               <h3><%= listing.jobtitle %></h3>
               <p><%= listing.compensation %></p><br>
               <p><%= listing.description %></p><br>
-              <p><%= "Contact: #{listing.user.email}" %></p>
+              
               <p>Skill Badges:<br><%= listing.skills %></p><br>
               <%= link_to 'Show', listing, class: "btn btn-link" %>
               <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>

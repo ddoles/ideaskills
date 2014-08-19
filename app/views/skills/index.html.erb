@@ -8,6 +8,7 @@
               <p><%= skill.description %></p><br>
               <p>Track:<br><%= skill.track %></p><br>
               <p>Experience:<br><%= skill.level %></p><br>
+              <p><%= "Contact: #{skill.user.email}" %></p>
               <%= link_to 'Show', skill, class: "btn btn-link" %>
               <%= link_to 'Edit', edit_skill_path(skill), class: "btn btn-link" %>
               <%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>  

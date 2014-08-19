@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :skills
+
   devise_for :users
   resources :listings
   resources :users, only: [:index, :show]

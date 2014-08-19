@@ -1,0 +1,23 @@
+<div class="center">
+  <div class="row">
+    <% @skills.each do |skill| %>
+       <div class="col-md-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3><%= skill.title %></h3>
+              <p><%= skill.description %></p><br>
+              <p>Track:<br><%= skill.track %></p><br>
+              <p>Experience:<br><%= skill.level %></p><br>
+              <%= link_to 'Show', skill, class: "btn btn-link" %>
+              <%= link_to 'Edit', edit_skill_path(skill), class: "btn btn-link" %>
+              <%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>  
+            
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+
+<%= link_to 'New Skill', new_skill_path %>

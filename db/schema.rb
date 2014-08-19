@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817003750) do
+ActiveRecord::Schema.define(version: 20140819013153) do
 
   create_table "listings", force: true do |t|
     t.string   "jobtitle"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20140817003750) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "skills", force: true do |t|
+    t.string   "title"
+    t.text     "source"
+    t.text     "description"
+    t.text     "track"
+    t.text     "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

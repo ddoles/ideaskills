@@ -32,6 +32,10 @@
     <%= f.label :level %><br>
     <%= f.select(:level, options_for_select([['Beginner'], ['Immediate'], ['Advanced']]), {}, {class: "form-control"}) %>
   </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

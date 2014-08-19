@@ -3,6 +3,7 @@
     <% @skills.each do |skill| %>
        <div class="col-md-3">
           <div class="thumbnail">
+            <%= link_to image_tag(skill.image.url :medium), skill %>
             <div class="caption">
               <h3><%= skill.title %></h3>
               <p><%= skill.description %></p><br>

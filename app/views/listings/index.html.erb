@@ -2,6 +2,12 @@
   <h2> Find talented SJSU students for your project </h2>
   
 </div>
+<div id="tag_cloud">
+  <% tag_cloud Listing.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<br>
 
 <div class="center">
   <div class="row">
@@ -13,8 +19,8 @@
               <h3><%= listing.jobtitle %></h3>
               <p><%= listing.compensation %></p><br>
               <p><%= listing.description %></p><br>
-              <p><%= "Contact: #{listing.user.email}" %></p>
-              <p>Skill Badges:<br><%= listing.skills %></p><br>
+              <p><%= "#{listing.user.email}" %></p><br>
+              <p><%= raw listing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
               <%= link_to 'Show', listing, class: "btn btn-link" %>
             </div>
           </div>

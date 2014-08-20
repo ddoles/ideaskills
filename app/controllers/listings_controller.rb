@@ -10,7 +10,11 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
+    if params[:tag]
+      @listings = Listing.tagged_with(params[:tag])
+    else
+      @listings = Listing.all.order("created_at DESC")
+    end
   end
 
   # GET /listings/1
@@ -76,7 +80,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:jobtitle, :description, :contactem, :compensation, :skills, :image)
+      params.require(:listing).permit(:tag_list, :jobtitle, :description, :contactem, :compensation, :skills, :image)
     end
 
     def check_user

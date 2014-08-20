@@ -55,3 +55,19 @@ body {
     margin: 0px;
   }
 }
+
+.jumbotron {
+  background-image: url('https://dl.dropboxusercontent.com/s/jtz0em177g1ppg6/SJSU.jpg?dl=0');
+  background-repeat:no-repeat;
+  background-size: cover;
+  h1, h2 {
+    font-family: guardian-egyptt, georgia, serif;
+    margin-bottom: 10px;
+    height: 40px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background:transparent;
+  }
+  h1 {font-size: 48px}
+  h2 {font-size: 36px}
+}

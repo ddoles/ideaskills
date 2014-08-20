@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'pages/members'
+  get 'mylistings' => "listings#mylistings"
 
   root 'listings#index'
 

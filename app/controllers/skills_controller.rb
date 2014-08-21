@@ -5,8 +5,13 @@ class SkillsController < ApplicationController
 
   # GET /skills
   # GET /skills.json
+  
   def index
-    @skills = Skill.all
+    if params[:tag]
+      @skills = Skill.tagged_with(params[:tag])
+    else
+      @skills = Skill.all.order("created_at DESC")
+    end
   end
 
   # GET /skills/1
@@ -72,6 +77,6 @@ class SkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:title, :source, :description, :track, :level, :image)
+      params.require(:skill).permit(:tag_list, :title, :source, :description, :track, :level, :image)
     end
 end

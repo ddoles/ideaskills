@@ -1,3 +1,10 @@
+<div id="tag_cloud">
+  <% tag_cloud Skill.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<br>
+
 <div class="center">
   <div class="row">
     <% @skills.each do |skill| %>
@@ -7,9 +14,9 @@
             <div class="caption">
               <h3><%= skill.title %></h3>
               <p><%= skill.description %></p><br>
-              <p>Track:<br><%= skill.track %></p><br>
-              <p>Experience:<br><%= skill.level %></p><br>
-              <p><%= "Contact: #{skill.user.email}" %></p>
+              <p>Track:<%= skill.track %></p><br>
+              <p>Experience:<%= skill.level %></p><br>
+              <p><%= raw skill.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
               <%= link_to 'Show', skill, class: "btn btn-link" %>
               <% if (user_signed_in?) && (current_user == skill.user) %>
                 <%= link_to 'Edit', edit_skill_path(skill), class: "btn btn-link" %>

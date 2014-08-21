@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    if params[:tag]
+      @users = User.tagged_with(params[:tag])
+    else
+      @users = User.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +29,6 @@ private
     end
 
   def listing_params
-      params.require(:user).permit(:name, :image)
+      params.require(:user).permit(:tag_list, :name, :image)
     end
 end

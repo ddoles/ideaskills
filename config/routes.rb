@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :listings
-  resources :users, only: [:index, :show]
+  resources :users
   resources :skills
   
-  get 'tags/:tag', to: 'listings#index', as: :tag
+  get 'tags/:tag', to: 'listings#index' 'user#index', as: :tag
+
   get 'pages/about'
   get 'pages/contact'
   get 'pages/members'
   get 'mylistings' => "listings#mylistings"
+
 
   root 'listings#index'
 

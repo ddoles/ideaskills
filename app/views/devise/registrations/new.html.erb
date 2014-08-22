@@ -24,6 +24,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :placeholder =>"Tell your major and actual or expected graduation. Additionally describe your skills, relevant course work or projects you have worked on, etc.", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>

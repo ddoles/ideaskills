@@ -13,7 +13,7 @@ if Rails.env.development?
 				    :path => ":style/:id_:filename"
    end
    validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-   validates :name, presence: true
+   validates :name, :description, presence: true
 
    has_many :listings, dependent: :destroy
 end

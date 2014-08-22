@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :skills
   
-  get 'tags/:tag', to: 'listings#index' 'user#index' 'skills#index', as: :tag
+  get 'tags/:tag', to: 'listings#index' 'user#index', as: :tag
 
   get 'pages/about'
   get 'pages/contact'

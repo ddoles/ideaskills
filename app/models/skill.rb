@@ -1,5 +1,4 @@
 class Skill < ActiveRecord::Base
-	acts_as_taggable
 	if Rails.env.development?
 		has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "imagesnotfound"
 	else	

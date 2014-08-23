@@ -21,7 +21,7 @@
               <p><%= listing.description %></p><br>
               <p><%= "#{listing.user.email}" %></p><br>
               <p><%= raw listing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-              <%= link_to 'Show', listing, class: "btn btn-link" %>
+              <%= link_to 'More...', listing, class: "btn btn-link" %>
             </div>
           </div>
       </div>

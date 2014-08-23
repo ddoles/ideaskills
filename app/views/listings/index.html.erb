@@ -19,7 +19,6 @@
               <h3><%= listing.jobtitle %></h3>
               <p><%= listing.compensation %></p><br>
               <p><%= listing.description %></p><br>
-              <p><%= "#{listing.user.email}" %></p><br>
               <p><%= raw listing.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
               <%= link_to 'More...', listing, class: "btn btn-link" %>
             </div>

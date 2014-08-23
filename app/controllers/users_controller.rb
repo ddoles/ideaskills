@@ -25,6 +25,6 @@ private
     end
 
   def listing_params
-      params.require(:user).permit(:name, :image)
+      params.require(:user).permit(:tag_list, :name, :image)
     end
 end

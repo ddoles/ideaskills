@@ -6,7 +6,11 @@
             <%= link_to image_tag(user.image.url :thumb), user %>
             <div class="caption">
               <h3><%= user.name %></h3>
-              <p><%= user.email %></p>
+              <br>
+              <p><%= user.tag_list %></p>
+              <br>
+              <p><%= truncate(user.description, :length => 80) %></p>
+              <%= link_to 'More...', user, class: "btn btn-link" %>
             </div>
           </div>
       </div>

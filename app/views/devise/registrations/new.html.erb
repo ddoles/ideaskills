@@ -2,15 +2,15 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+  
   <div class="form-group">
-  	<%= f.label :name %><br />
-  	<%= f.text_field :name, :placeholder =>"Enter First and Last Name", autofocus: true, class: "form-control" %>
+  	<%= f.label :email %><br />
+  	<%= f.email_field :email, :placeholder =>"Enter Email Address", autofocus: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
-  	<%= f.label :email %><br />
-  	<%= f.email_field :email, :placeholder =>"Enter Email Address", class: "form-control" %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder =>"Enter First and Last Name", class: "form-control" %>
   </div>
 
   <div class="form-group">

@@ -84,9 +84,9 @@ Rails.application.configure do
   # Required for Devise Gem remember to change localhost:3000 to actual application host
   config.action_mailer.default_url_options = { host: 'ideaskills-2014-v2.herokuapp.com' }
 
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = { 
     address: "smtp.gmail.com", 
     port: 587, 

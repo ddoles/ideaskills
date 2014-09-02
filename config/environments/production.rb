@@ -81,5 +81,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Required for Devise Gem remember to change localhost:3000 to actual application host
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'http://ideaskills-2014-v2.herokuapp.com' }
+
+  config.action_mailer.smtp_settings = { 
+    address: "smtp.gmail.com", 
+    port: 587, 
+    domain: 'gmail.com', 
+    authentication: "plain", 
+    enable_starttls_auto: true, 
+    user_name: "ideasjsu", # just use the part before the @
+    password: ENV["GMAIL_PASSWORD"] 
+  } 
 end
